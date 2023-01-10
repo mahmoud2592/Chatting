@@ -1,5 +1,5 @@
 require "active_support/concern"
-# require Rails.root.join('lib/Chat_exception')
+require Rails.root.join('lib/chat_exception')
 require Rails.root.join('lib/jwt_manager')
 
 module PasswordOtpManager

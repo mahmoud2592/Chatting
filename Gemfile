@@ -54,3 +54,6 @@ group :development do
   # gem "spring"
 end
 gem 'redis'
+gem 'sentry-rails'
+gem 'sentry-ruby'
+gem 'sentry-sidekiq'

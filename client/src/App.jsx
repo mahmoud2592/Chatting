@@ -46,7 +46,7 @@ function App() {
     e.preventDefault();
     const body = e.target.message.value;
     e.target.message.value = "";
-
+    alert(body);
     await fetch("http://localhost:3000/messages", {
       method: "POST",
       headers: {

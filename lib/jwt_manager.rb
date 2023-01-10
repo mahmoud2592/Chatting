@@ -1,4 +1,4 @@
-require Rails.root.join('lib/Chat_exception')
+require Rails.root.join('lib/chat_exception')
 class JWTManager
   class << self
     def encode(payload, exp = 2.hours.from_now)
