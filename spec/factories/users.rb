@@ -4,7 +4,7 @@ FactoryBot.define do
     name { Faker::Name.name }
     password { "000000" }
     password_confirmation { "000000" }
-    type {['Farmer', 'Merchant', 'ServiceProvider', 'Broker'].sample}
+    type {['admin', 'normal_user'].sample}
     confirmed_at { DateTime.now }
   end
 end

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   scope module: 'user_managment' do
-    %w[farmers brokers merchants admins service_providers].each do |user_type|
+    %w[admins clients].each do |user_type|
       post "#{user_type}/register", to: "#{user_type}#create"
       post "#{user_type}/:id/confirm_mobile_number", to: 'verifications#confirm_mobile_number'
       post "#{user_type}/:id/resend_confirmation_token", to: 'verifications#resend_confirmation_token'
