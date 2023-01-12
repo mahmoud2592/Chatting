@@ -24,6 +24,7 @@ services:
       - "3000:3000"
     depends_on:
       - db
+      - redis
   redis:
    image: "redis:4.0-alpine"
    command: redis-server
@@ -31,6 +32,29 @@ services:
       - "6379:6379"
    volumes:
       - redis:/data
+  # sidekiq:
+  #   depends_on:
+  #       - "db"
+  #       - "redis"
+  #       - "web"
+  #   build:
+  #     context: .
+  #     dockerfile: ./Dockerfile
+  #   command: sidekiq -C ./config/sidekiq.yml
+  #   volumes:
+  #       - "../.:/myapp"
+  #   environment:
+  #     REDIS_URL: redis://redis:6399
+  #     POSTGRES_PASSWORD: password
+  #     POSTGRES_USER: fasta_chatting
+  #     POSTGRES_DB: fasta_chatting_production
+  #     DB_PORT: 5432
+  #     DB_HOST: db
+  #     RAILS_ENV: development
+  #     RAILS_MAX_THREADS: 5
+
 volumes:
  db:
  redis:
+ sidekiq:
+ we:

@@ -1,0 +1,10 @@
+#!/bin/bash -x
+
+cd $(dirname $0)/..
+
+trap "pkill -P $$" EXIT
+
+./bin/wait-for $REDIS_HOST 6379
+./bin/rails db:migrate
+./bin/rails assets:precompile
+./bin/pumactl start

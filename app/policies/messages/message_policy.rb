@@ -8,19 +8,19 @@ module Messages
     end
 
     def show?
-     true
+     current_user
     end
 
     def create?
-      true
+      current_user
     end
 
     def update?
-      true
+      current_user.id == record.user_id
     end
 
     def destroy?
-      true
+      current_user.id == record.user_id
     end
   end
 end

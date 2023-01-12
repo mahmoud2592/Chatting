@@ -14,13 +14,13 @@ module UserManagment
     end
 
     def resend_confirmation_token
-      @user = User.find_by(mobile: params[:mobile])
-      if @user
-        # Verifier.send_verification_code(params[:mobile])
-        render json: { :message => "Send code to mobile number" }, status: :ok
-      else
-        render json: { :error => "Invalid mobile number" }, status: :unprocessable_entity
-      end
+      # @user = User.find_by(mobile: params[:mobile])
+      # if @user
+      #   _send = Phone::Verifier.new(params[:mobile])
+      #   render json: { :message => "Send code to mobile number" }, status: :ok
+      # else
+      #   render json: { :error => "Invalid mobile number" }, status: :unprocessable_entity
+      # end
     end
 
     private
